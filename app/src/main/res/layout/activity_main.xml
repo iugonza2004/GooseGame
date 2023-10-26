@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/fons"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/fondo_pantalla_2" />
+
+    <LinearLayout
+        android:id="@+id/gameTextLayout"
+        android:layout_width="320dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/partyLayout"
+        app:layout_constraintStart_toStartOf="@+id/partyLayout"
+        app:layout_constraintTop_toTopOf="@+id/partyLayout">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/partyLayout"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/playersInput"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/createPartyLayout"
+        app:layout_constraintStart_toStartOf="@+id/createPartyLayout"
+        app:layout_constraintTop_toTopOf="@+id/createPartyLayout">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/createPartyLayout"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createParty"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#80000000"
+        android:onClick="createParty"
+        android:text="Start Game"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/createPartyLayout"
+        app:layout_constraintEnd_toEndOf="@+id/playersInput" />
+
+    <EditText
+        android:id="@+id/player2Name"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Player 2"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/playersInput"
+        app:layout_constraintEnd_toEndOf="@+id/playersInput"
+        app:layout_constraintTop_toTopOf="@+id/playersInput" />
+
+    <EditText
+        android:id="@+id/player1Name"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:hint="Player 1"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/playersInput"
+        app:layout_constraintStart_toStartOf="@+id/playersInput"
+        app:layout_constraintTop_toTopOf="@+id/playersInput" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/createParty"
+        app:layout_constraintEnd_toEndOf="@+id/createPartyLayout"
+        app:layout_constraintStart_toStartOf="@+id/createPartyLayout"
+        app:layout_constraintTop_toBottomOf="@+id/playersInput" />
+
+    <TextView
+        android:id="@+id/gameText"
+        android:layout_width="299dp"
+        android:layout_height="150dp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/gameTextLayout"
+        app:layout_constraintEnd_toEndOf="@+id/gameTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/gameTextLayout"
+        app:layout_constraintTop_toTopOf="@+id/gameTextLayout" />
+
+    <ImageButton
+        android:id="@+id/dice"
+        android:layout_width="212dp"
+        android:layout_height="211dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="playerThrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/partyLayout"
+        app:layout_constraintEnd_toEndOf="@+id/partyLayout"
+        app:layout_constraintStart_toStartOf="@+id/partyLayout"
+        app:srcCompat="@drawable/perspective_dice_six_faces_random_38559"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/player1Position"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="0"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/dice"
+        app:layout_constraintStart_toStartOf="@+id/partyLayout" />
+
+    <TextView
+        android:id="@+id/player2Position"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/dice"
+        app:layout_constraintEnd_toEndOf="@+id/partyLayout" />
+
+    <TextView
+        android:id="@+id/player1indicator"
+        android:layout_width="127dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/player1Position"
+        app:layout_constraintTop_toBottomOf="@+id/gameTextLayout" />
+
+    <TextView
+        android:id="@+id/player2indicator"
+        android:layout_width="127dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/player2Position"
+        app:layout_constraintTop_toBottomOf="@+id/gameTextLayout" />
+
+    <ImageView
+        android:id="@+id/positionImage1"
+        android:layout_width="64dp"
+        android:layout_height="58dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/player1Position"
+        app:layout_constraintStart_toEndOf="@+id/player1Position"
+        app:srcCompat="@drawable/pngtree_footprint_foot_icon_vector_illustration_png_image_4661336" />
+
+    <ImageView
+        android:id="@+id/positionImage2"
+        android:layout_width="64dp"
+        android:layout_height="58dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/player2Position"
+        app:layout_constraintEnd_toStartOf="@+id/player2Position"
+        app:srcCompat="@drawable/pngtree_footprint_foot_icon_vector_illustration_png_image_4661336" />
+
+    <LinearLayout
+        android:id="@+id/winnerLayout"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/copa"
+        android:layout_width="325dp"
+        android:layout_height="414dp"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/winnerLayout"
+        app:layout_constraintEnd_toEndOf="@+id/winnerLayout"
+        app:layout_constraintStart_toStartOf="@+id/winnerLayout"
+        app:layout_constraintTop_toTopOf="@+id/winnerLayout"
+        app:srcCompat="@drawable/copa_png" />
+
+    <LinearLayout
+        android:id="@+id/winnerTextLayout"
+        android:layout_width="320dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_layout"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/winnerLayout">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/winnerText"
+        android:layout_width="299dp"
+        android:layout_height="100dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/winnerTextLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/winnerTextLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
